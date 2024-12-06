@@ -1,17 +1,17 @@
 import { useState } from "react";
-import ReceiveProducts from "./components/ReceiveProducts";
-import AddProduct from "./components/AddProduct";
+import ReceiveTodos from "./components/ReceiveTodos";
+import AddTodo from "./components/AddTodo";
 
 import "./App.css";
 
 function App() {
   return (
     <>
-      <p>Receive Products</p>
-      <ReceiveProducts></ReceiveProducts>
+      <p>Receive Todos</p>
+      <ReceiveTodos></ReceiveTodos>
 
-      <p>Add new product</p>
-      <AddProduct></AddProduct>
+      <p>Add new todo</p>
+      <AddTodo></AddTodo>
     </>
   );
 }

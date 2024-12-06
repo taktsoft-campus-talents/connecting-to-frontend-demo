@@ -1,17 +1,18 @@
 import { useState } from "react";
 
 function ReceiveProducts() {
-  const [products, setProducts] = useState([]);
+  const [todos, setTodos] = useState([]);
 
   async function fetchData() {
     try {
-      const response = await fetch("http://localhost:3000/products");
+      const response = await fetch("http://localhost:3000/todos");
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
+
       const data = await response.json();
       console.log(data);
-      setProducts(data);
+      setTodos(data);
     } catch (error) {
       console.error("Error fetching products:", error);
     }
@@ -19,14 +20,12 @@ function ReceiveProducts() {
 
   return (
     <section>
-      <button onClick={fetchData}>Fetch products</button>
+      <button onClick={fetchData}>Fetch todos</button>
 
-      {products.map((product) => {
+      {todos.map((todo) => {
         return (
-          <div key={product.id}>
-            <h2>{product.title}</h2>
-            <p>{product.description}</p>
-            <p>Price: {product.price}</p>
+          <div key={todo.id}>
+            <h2>{todo.title}</h2>
           </div>
         );
       })}
