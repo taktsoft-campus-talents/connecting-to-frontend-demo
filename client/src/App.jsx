@@ -1,4 +1,3 @@
-import { useState } from "react";
 import ReceiveTodos from "./components/ReceiveTodos";
 import AddTodo from "./components/AddTodo";
 
